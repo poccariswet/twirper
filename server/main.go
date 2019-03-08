@@ -10,7 +10,7 @@ import (
 type helloworldServer struct{}
 
 func (s *helloworldServer) Hello(ctx context.Context, req *pb.HelloReq) (*pb.HelloResp, error) {
-	return &pb.HelloResp{Text: "helloooo, " + req.GetSubject()}, nil
+	return &pb.HelloResp{Text: "Hey!, " + req.GetSubject()}, nil
 }
 
 func main() {

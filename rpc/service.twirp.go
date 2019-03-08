@@ -141,7 +141,7 @@ func (s *helloWorldServer) writeError(ctx context.Context, resp http.ResponseWri
 // HelloWorldPathPrefix is used for all URL paths on a twirp HelloWorld server.
 // Requests are always: POST HelloWorldPathPrefix/method
 // It can be used in an HTTP mux to route twirp requests along with non-twirp requests on other routes.
-const HelloWorldPathPrefix = "/twirp/twirp.example.helloworld.HelloWorld/"
+const HelloWorldPathPrefix = "/twirp/sample/"
 
 func (s *helloWorldServer) ServeHTTP(resp http.ResponseWriter, req *http.Request) {
 	ctx := req.Context()
@@ -164,7 +164,7 @@ func (s *helloWorldServer) ServeHTTP(resp http.ResponseWriter, req *http.Request
 	}
 
 	switch req.URL.Path {
-	case "/twirp/twirp.example.helloworld.HelloWorld/Hello":
+	case "/twirp/sample/Hello":
 		s.serveHello(ctx, resp, req)
 		return
 	default:
